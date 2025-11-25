@@ -1,1 +1,64 @@
-Sample Test File over Golang http.FileServer
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おすすめの食べ物</title>
+</head>
+<body>
+    <h1>おすすめの食べ物</h1>
+    <img src="https://user0514.cdnw.net/shared/img/thumb/makinami_p714D05_TP_V.jpg" width="400" alt="おすすめの食べ物の写真">
+    <p>私のおすすめはカツカレーです。</p>
+    <a href="file:///C:/Users/hiroto/Downloads/second.html">2ぺーじ目へ</a>
+
+    <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;動く時計&lt;/title&gt;
+    &lt;script&gt;
+        function updateClock() {
+            // 現在時刻を取得
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            // 1桁の場合は0を付ける
+            if (hours &lt; 10) hours = '0' + hours;
+            if (minutes &lt; 10) minutes = '0' + minutes;
+            if (seconds &lt; 10) seconds = '0' + seconds;
+
+            // 時刻を表示
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clock').innerHTML = timeString;
+        }
+
+        // 1秒ごとにupdateClock関数を実行
+        setInterval(updateClock, 1000);
+
+        // ページ読み込み時に即座に表示
+        window.onload = updateClock;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;現在時刻&lt;/h1&gt;
+    &lt;div id="clock" style="font-size: 48px; font-weight: bold; color: blue;"&gt;
+        00:00:00
+    &lt;/div&gt;
+
+        &lt;!-- ここに既存のコンテンツを配置 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+</body>
+</html>

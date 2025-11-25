@@ -1,16 +1,28 @@
 package main
 import (
-	"fmt"
-	"net/http"
-	"runtime"
+  "fmt"
+  "net/http"
+  "net/http/httputil"
 )
+
+
 func main() {
-	fmt.Printf("Go version: %s\n", runtime.Version())
+  const url = "Hori-Hiroto.github.io/index.html"
 
-	http.Handle("/", http.FileServer(http.Dir("public/")))
+  req, _ := http.NewRequest("GET", url, nil)
 
-	fmt.Println("Launch server...")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
-		fmt.Printf("Failed to launch server: %v", err)
+  dump, _ := httputil.DumpRequestOut(req, true)
+  fmt.Printf("%s", dump)
+
+  client := new(http.Client)
+  resp, err := client.Do(req)
+    if err != nil {
+		fmt.Println(err)
+		return
 	}
-}   
+  defer resp.Body.Close()
+
+
+  dumpResp, _ := httputil.DumpResponse(resp, true)
+  fmt.Printf("%s", dumpResp)
+}
